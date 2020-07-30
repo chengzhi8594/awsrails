@@ -30,7 +30,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   test "should create event" do
     post user_session_url, params: {user:{email: 'tparki@hotmail.com', password: 'password'}}
     @new_event = {:title => "Event test", :description => "Testing122333333333", :address => "testing", :user_id => 1}
-    assert_difference('Event.count', -0) do
+    assert_difference('Event.count', +1) do
     post events_url,params:{event: @new_event}
     end
   end
